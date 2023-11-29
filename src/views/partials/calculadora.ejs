@@ -1,0 +1,34 @@
+<div class="container p-3">
+  <%- usuario%>
+  <div class="row">
+    <div class="col">
+      <form id="funcion-form">
+        <div class="form-group text-center">
+          <label for="funcion">Expresión Algebraica:</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="2x + 45x - 234"
+            id="funcion"
+          />
+        </div>
+        <button class="btn btn-primary m-1" type="submit">
+          <i class="fa-solid fa-chart-line"></i>
+          Calcular
+        </button>
+      </form>
+      <button class="btn btn-warning m-1" id="btnGuardar">
+        <i class="fa-solid fa-floppy-disk"></i>
+        Guardar</button>
+    </div>
+    <div class="col">
+      <div id="mostrarFuncion"></div>
+    </div>
+    <div class="col">
+      <canvas id="grafica" width="300px" height="300px"></canvas>
+    </div>
+  </div>
+
+  <div id="funcion-container"></div>
+</div>
+<script type="module" src="./calculadora.js"></script>

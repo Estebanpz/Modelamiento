@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error de login</title>
+    <%- include('partials/head')%>
+  </head>
+  <body>
+    <%if(usuario){%> <%- include('partials/navigation', {usuario:usuario})%>
+    <%}else{%> <%- include('partials/navigation')%> <%}%>
+    <main class="container">
+      <div class="row p-3 my-2">
+        <div class="col-6">
+          <img src="/img/errorLogin.jpeg" class="img-fluid rounded" />
+        </div>
+        <div
+          class="col-6 p-4 justify-content-center align-items-center text-center"
+        >
+          <p class="fs-3">
+            <span class="text-danger">Opps!</span> Fallo al iniciar sesión.
+          </p>
+          <p class="lead">
+            <%if(error === 'auth/email-already-exists' || error === 'auth/email-already-in-use'){%> Este correo ya se
+            encuentra en uso. <%}else if(error == 'auth/weak-password'){%>
+            Verifique que si haya proporcionado una contraseña. Debe ser mínimo
+            de 6 dígitos. <%}else if(error =='auth/missing-password'){%> ¿Has
+            olvidado la contraseña?
+            <i class="fa-solid fa-exclamation"></i>
+            <%}else{%>
+                <%= error%>
+             <%}%>
+          </p>
+          <a href="/" class="btn btn-primary">Go Home</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

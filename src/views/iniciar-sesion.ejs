@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title%></title>
+    <%- include('partials/head')%>
+</head>
+<body>
+    <%- include('partials/navigation')%>
+
+    <main class="container d-flex justify-content-center align-items-center">
+        <form
+          action="iniciar-sesion"
+          method="post"
+          class="my-4 card bg-dark text-center w-75"
+        >
+          <div class="row mb-4">
+            <h1 class="text-center text-white"><%= title%></h1>
+          </div>
+          <!-- Email input -->
+          <div class="form-outline mb-4 container text-start">
+            <label for="correo" class="form-label text-white text-start"
+              >Correo electronico</label
+            >
+            <input type="email" name="correo" id="correo" class="form-control" />
+          </div>
+  
+          <!-- Password input -->
+          <div class="form-outline mb-4 container text-start">
+            <label for="contrasena" class="form-label text-white text-start"
+              >Contraseña</label
+            >
+            <input type="password" name="contrasena" class="form-control" />
+          </div>
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block mb-4">
+            Sign in
+          </button>
+  
+          <!-- Register buttons -->
+          <div class="text-center">
+            <p class="text-white">ó inicia sesión con:</p>
+            <button type="button" class="btn btn-primary btn-floating mx-1">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+  
+            <button type="button" class="btn btn-danger btn-floating mx-1">
+              <i class="fab fa-google"></i>
+            </button>
+  
+            <button type="button" class="btn btn-secondary btn-floating mx-1">
+                <i class="fa-brands fa-x-twitter"></i>
+            </button>
+  
+            <button type="button" class="btn btn-info btn-floating mx-1 my-1">
+              <i class="fab fa-github"></i>
+            </button>
+          </div>
+          <a href="/crear-cuenta" class="text-white my-2">
+            ¿No tienes cuenta?
+            <i class="fa-regular fa-id-card fa-beat"></i>
+          </a>
+        </form>
+      </main>
+      <%- include('partials/footer')%>
+</body>
+</html>
